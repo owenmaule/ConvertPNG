@@ -69,7 +69,8 @@ int main(int argc, char* argv[])
 	// Palette
 	// This could be done inline but i felt for the current usage, it would be simpler with a pre-pass
 	uint_32 palette_values = 0;
-	rgb_pixel palette[MAX_PALETTE];
+	// Extra slot because I'm going to let it go 1 over to catch the situation that more were required
+	rgb_pixel palette[MAX_PALETTE + 1];
 
 	for (uint_32 y = 0, y_end = image_height; y != y_end; ++y) {
 		for (uint_32 x = 0, x_end = image_width; x != x_end; ++x) {
